@@ -8,6 +8,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class Practice09SetTextScaleXView extends View {
+
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text = "Hello HenCoder";
 
@@ -33,6 +34,12 @@ public class Practice09SetTextScaleXView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
+        canvas.save();
         canvas.drawText(text, 50, 100, paint);
+        paint.setTextScaleX(1.2f);
+        canvas.drawText(text, 50, 200, paint);
+        paint.setTextScaleX(0.8f);
+        canvas.drawText(text,50,300,paint);
+        canvas.restore();
     }
 }

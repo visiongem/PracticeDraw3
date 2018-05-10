@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class Practice12MeasureTextView extends View {
+
     Paint paint1 = new Paint(Paint.ANTI_ALIAS_FLAG);
     Paint paint2 = new Paint(Paint.ANTI_ALIAS_FLAG);
     String text1 = "三个月内你胖了";
@@ -38,9 +39,8 @@ public class Practice12MeasureTextView extends View {
         super.onDraw(canvas);
 
         // 使用 Paint.measureText 测量出文字宽度，让文字可以相邻绘制
-
         canvas.drawText(text1, 50, 200, paint1);
-        canvas.drawText(text2, 50 + 100, 200, paint2);
-        canvas.drawText(text3, 50 + 200, 200, paint1);
+        canvas.drawText(text2, 50 + paint1.measureText(text1), 200, paint2);
+        canvas.drawText(text3, 50 + paint1.measureText(text1) + paint2.measureText(text2), 200, paint1);
     }
 }
