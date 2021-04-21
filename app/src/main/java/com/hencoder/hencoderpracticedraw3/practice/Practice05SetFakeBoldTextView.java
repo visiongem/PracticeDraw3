@@ -34,7 +34,8 @@ public class Practice05SetFakeBoldTextView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
 
-        paint.setFakeBoldText(true);
         canvas.drawText(text, 50, 100, paint);
+        paint.setFakeBoldText(true);
+        canvas.drawText(text, 50, 200, paint);
     }
 }

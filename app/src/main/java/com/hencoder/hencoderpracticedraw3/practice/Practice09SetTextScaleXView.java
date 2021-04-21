@@ -40,6 +40,10 @@ public class Practice09SetTextScaleXView extends View {
         canvas.drawText(text, 50, 200, paint);
         paint.setTextScaleX(0.8f);
         canvas.drawText(text,50,300,paint);
+        paint.setTextScaleX(0.5f);
+        canvas.drawText(text,50,400,paint);
+        paint.setTextScaleX(2f);
+        canvas.drawText(text,50,500,paint);
         canvas.restore();
     }
 }
